@@ -89,9 +89,11 @@ ExampleZNF420_top1A_pos.wig
 ExampleZNF420_top1B_pos.wig
 ```
 
-Then run Pipeline.pl on the tet file, for example:
+Then run Pipeline.pl on the text file, for example:
 
-`./Pipeline.pl FILES.txt`
+`./Pipeline.pl FILES.txt > FILES.log`
+
+If there is a green SUCCESS then it's successful, otherwise send me the FILES.log file
 
 This will produce 1 peak file per sample and a combined peak file `output.peak`. For example, the above will produce:
 
