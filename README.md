@@ -61,8 +61,17 @@ __2.__ stochhmm v. 0.35 (https://github.com/KorfLab/StochHMM)
     cd ../../
     ```
 
+## *3. Test run:*
 
-## *3. Running:*
+To quickly test if everything works do:
+
+`./Pipeline.pl test.txt > test.log`
+
+If it produces an output file (output.txt) then it's success.
+
+Otherwise email me the *test.log* file
+
+## *4. How to run:*
 
 Say we are running this on ZNF420 region (chr19:37518112-37671921) for 4 DRIPc + strand files (provided in this directory)
 

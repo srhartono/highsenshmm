@@ -1,6 +1,6 @@
-test_control_pos.wig
-test_scramble_pos.wig
-test_top1A_pos.wig
-test_top1B_pos.wig
+example/test_control_pos.wig
+example/test_scramble_pos.wig
+example/test_top1A_pos.wig
+example/test_top1B_pos.wig
 
 
