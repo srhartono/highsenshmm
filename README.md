@@ -20,10 +20,10 @@ cd highsenshmm
 
 ## *2. Requirements:*
     
-__1.__ bedtools v.2.25 (http://bedtools.readthedocs.io/en/latest/content/installation.html)
+__1.__ bedtools v.2.17 (http://bedtools.readthedocs.io/en/latest/content/installation.html)
 
 - To check if you have it or not, in terminal just type `bedtools --version`. 
-- If command not found or the version isn't at least v.2.25 then you have to install it.
+- If command not found or the version isn't at least v.2.17 then you have to install it.
 - To install bedtools copy paste below:
     
     ```
@@ -37,10 +37,10 @@ __1.__ bedtools v.2.25 (http://bedtools.readthedocs.io/en/latest/content/install
     cd ../../
     ```
     
-__2.__ stochhmm v. 0.37(https://github.com/KorfLab/StochHMM)
+__2.__ stochhmm v. 0.35 (https://github.com/KorfLab/StochHMM)
 
 - To check if you have it or not, in terminal just type `stochhmm`. 
-- If command not found or the version isn't at least v.0.37 then you have to install it.
+- If command not found or the version isn't at least v.0.35 then you have to install it.
 - To install stochhmm copy paste below in the terminal
     
     ```
