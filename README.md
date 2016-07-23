@@ -49,6 +49,9 @@ __2.__ stochhmm v. 0.35 (https://github.com/KorfLab/StochHMM)
     
     # git clone StochHMM
     git clone https://github.com/KorfLab/StochHMM
+
+    # go to StochHMM folder
+    cd StochHMM
     
     # configure is to configure the make according to your computer setup
     ./configure
