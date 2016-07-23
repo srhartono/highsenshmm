@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+# by Stella Hartono 2016
+# Wrapper script
 
 use strict; use warnings;
 
@@ -49,7 +51,6 @@ for (my $i = 0; $i < @FILES; $i++) {
 
 my $cmd6 = "./bin/4_CombineAll.pl @FILENAMES";
 system($cmd6) == 0 or die "Failed to run bin/4_CombineAll.pl @FILENAMES: $!\n";
-#print "\e[1;35mFinal Combine Step \e[0;32mSUCCESS!\e[0m: $cmd6\n";
 
 sub getFilename {
 	my ($fh, $type) = @_;

@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+# by Stella Hartono 2015
+# This script combine bed files, prioritizing HOTSPOT, MEDIUM, HOTSPOT_EXT, then SPARSE
 
 use strict; use warnings;
 

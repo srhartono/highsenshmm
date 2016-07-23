@@ -1,9 +1,11 @@
 #!/usr/bin/env perl
+# by Stella Hartono and Aparna Rajpurkar 2014
 # This script will convert wig file into a fasta format
-# Converting values of the wig file into whatever you want
 # This is useful if you want to call states/peaks using StochHMM
 #
-# For example, "A" is anything below 10, "B" is anything above 10, "N" is anything 0
+# For example, if "A" is anything below 10, "B" is anything above 10, "N" is anything 0:
+#
+# Wig File:
 # variableStep chrom=chr1 span=10
 # 1
 # 11
@@ -12,8 +14,7 @@
 # 0
 # 0
 #
-# Into:
-#
+# Fasta File After:
 # >chr1
 # ABABNN
 
@@ -53,15 +54,15 @@ sub convert {
 
 
 sub main {
-	# Input
-	my ($input) = ($opt_i);
-	if ($input =~ /.customfa/) {
-		die "Input cannot be .customfa!\n";
-	}
+
+  # Input
+  my ($input) = ($opt_i);
+  die "Input cannot be .customfa!\n" if ($input =~ /.customfa/);
+
   # FIXME this may be incorrect regex. Use File::Basename if you want to improve it.
   # Or just use -o option
-  my ($name) = $input =~ /\/{0,1}(.+)$/ ; # to get filename without mitochy.pm
-	my $output = defined($opt_o) ? $opt_o : "$name.customfa";
+  my ($filename) = getFilename($input);
+  my $output = defined($opt_o) ? $opt_o : "$filename.customfa";
 	
 	# Open input wig file and process
 	open (my $in, "<", $input) 	or die "Cannot read from $input: $!\n" if $input !~ /.gz/;
@@ -88,9 +89,7 @@ sub main {
 			($chr) = $line =~ /chrom(.+) / if not defined($chr);
 			($chr) = $line =~ /chrom(.+)/  if not defined($chr);
 			$span = 1 if not defined($span);
-			#print "$opt_i: Processing chromosome $chr line is $line\n";
 			print $out ">$chr\n";
-#			last if $chr ne "chr1";
 		}
 		else {
 			die "Died at $line because line is not a wig file number\n" if $line !~ /^\d+/;
@@ -127,3 +126,24 @@ sub main {
 	close $in;
 	close $out;
 }
+
+
+sub getFilename {
+   my ($fh, $type) = @_;
+
+   # Split folder and fullname
+   my (@splitname) = split("\/", $fh);
+   my $fullname = pop(@splitname);
+   my @tempfolder = @splitname;
+   my $folder = join("\/", @tempfolder);
+
+   # Split fullname and shortname (dot separated)
+   @splitname = split(/\./, $fullname);
+   my $shortname = $splitname[0];
+   return($shortname)          if not defined($type);
+   return($folder, $fullname)     if defined($type) and $type =~ /folderfull/;
+   return($folder, $shortname)    if defined($type) and $type =~ /folder/;
+   return($fullname)        if defined($type) and $type =~ /full/;
+   return($folder, $fullname, $shortname)  if defined($type) and $type =~ /all/;
+}
+
