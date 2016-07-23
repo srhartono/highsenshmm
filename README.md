@@ -70,10 +70,12 @@ Say we are running this on ZNF420 region (chr19:37518112-37671921) for 4 DRIPc +
 
 Create a text file using whatever text editor you want (recommended: nano, vim, for mac: textedit, textwrangler) and put all 4 file names, one file per row. Example is `FILES.txt`
 
-> ExampleZNF420_control_pos.wig
-> ExampleZNF420_scramble_pos.wig
-> ExampleZNF420_top1A_pos.wig
-> ExampleZNF420_top1B_pos.wig
+```
+ExampleZNF420_control_pos.wig
+ExampleZNF420_scramble_pos.wig
+ExampleZNF420_top1A_pos.wig
+ExampleZNF420_top1B_pos.wig
+```
 
 Then run Pipeline.pl on the tet file, for example:
 
@@ -81,8 +83,10 @@ Then run Pipeline.pl on the tet file, for example:
 
 This will produce 1 peak file per sample and a combined peak file `output.peak`. For example, the above will produce:
 
-> 1. ExampleZNF420_control_pos.peak
-> 2. ExampleZNF420_scramble_pos.peak
-> 3. ExampleZNF420_top1A_pos.peak
-> 4. ExampleZNF420_top1B_pos.peak
-> 5. output.PEAK
+```
+1. ExampleZNF420_control_pos.peak
+2. ExampleZNF420_scramble_pos.peak
+3. ExampleZNF420_top1A_pos.peak
+4. ExampleZNF420_top1B_pos.peak
+5. output.PEAK
+```
