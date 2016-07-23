@@ -1,6 +1,6 @@
 ## *1. Starting Up:*
 
-- This has been tested to work in Ubuntu 14.04.4 LTS and Mac OS 10.9.5
+- This has been tested to work in Ubuntu v14.04.4 LTS and Mac OSX v10.9.5
 - If you are using Windows, then install Linux using wubi (http://wubi.sourceforge.net/faq.php) - this is easiest.
 - If you're using Mac/Linux, then open terminal
 - In terminal type `git` and enter. If it says something along the line `command not found` then install git from the link below:
