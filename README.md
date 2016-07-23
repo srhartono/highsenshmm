@@ -1,6 +1,6 @@
 ---
 
-## 1. Starting Up:
+## Starting Up:
 
 - If you are using Windows, then install Linux using wubi (http://wubi.sourceforge.net/faq.php) - this is easiest.
 - If you're using Mac/Linux, then open terminal
@@ -21,7 +21,7 @@ pwd > PATH.txt
 
 ---
 
-## 2. Requirements:
+## Requirements:
 
 1. bedtools v.2.25 (http://bedtools.readthedocs.io/en/latest/content/installation.html)
 2. stochhmm v. 0.37(https://github.com/KorfLab/StochHMM)
@@ -57,7 +57,7 @@ cd ../../
 
 ---
 
-## 3. Run:
+## Run:
 
 Say we are running this on ZNF420 region (chr19:37518112-37671921) for 4 DRIPc + strand files:
 
