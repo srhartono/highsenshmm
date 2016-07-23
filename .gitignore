@@ -1,5 +1,5 @@
 tmp/*
 tmp
 test*.peak
-*.log
+test.log
 output*
