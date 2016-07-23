@@ -88,7 +88,7 @@ sub main {
 			($chr) = $line =~ /chrom(.+) / if not defined($chr);
 			($chr) = $line =~ /chrom(.+)/  if not defined($chr);
 			$span = 1 if not defined($span);
-			print "$opt_i: Processing chromosome $chr line is $line\n";
+			#print "$opt_i: Processing chromosome $chr line is $line\n";
 			print $out ">$chr\n";
 #			last if $chr ne "chr1";
 		}

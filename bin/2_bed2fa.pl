@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 
-use strict; use warnings; use Getopt::Std;
-use vars qw($opt_i $opt_o);
+use strict; use warnings; use mitochy; use Getopt::Std;
 getopts("i:o:");
+use vars qw($opt_i $opt_o);
 
 my ($input1) = $opt_i;
 die "usage: $0 -i <SORTED BED from DRIPc_1.hmm stochhmm> [optional: -o output]\n" unless defined($input1);
 
-my ($folder1, $fileName1) = getFilename($input1, "folder");
+my ($folder1, $fileName1) = mitochy::getFilename($input1, "folder");
 my $output = defined($opt_o) ? $opt_o : "$fileName1.bedfa";
 
 my $lastpos = 1;
@@ -38,7 +38,7 @@ while (my $line = <$in1>) {
 			print $out "N";
 			$count ++;
 		}
-		print "$type\t$start\t$end\t:$temp\tLASTPOS: $lastpos\n";
+#		print "$type\t$start\t$end\t:$temp\tLASTPOS: $lastpos\n";
 	}
 	for (my $i = $start; $i < $end+1; $i++) {
 		if ($type =~ /LOW/i) {
@@ -51,7 +51,7 @@ while (my $line = <$in1>) {
 		}
 		$count ++;
 	}
-	print "$type\t$start\t$end\t:$temp\n\n";
+#	print "$type\t$start\t$end\t:$temp\n\n";
 	die "ERROR!lastpos $lastpos Died at $line\n" if $temp != $end and $temp != $end - 1;
 	$lastpos = $end+1;# if $temp == $end - 1;
 	#die "total = $temp\n" if $type =~ /HIGH/;#$type =~ /^LOW_426524$/;
@@ -60,25 +60,3 @@ close $in1;
 
 close $out;
 print "Count = $count\n";
-
-sub getFilename {
-        my ($fh, $type) = @_;
-
-   die "INPUT <@_> /usr/local/bin/Perl/mitochy.pm: getFilename <fh> <type (folder, full, folderfull, all)\n" unless defined($fh);
-
-   # Split folder and fullname
-        my (@splitname) = split("\/", $fh);
-        my $fullname = pop(@splitname);
-   my @tempfolder = @splitname;
-        my $folder = join("\/", @tempfolder);
-
-   # Split fullname and shortname (dot separated)
-        @splitname = split(/\./, $fullname);
-        my $shortname = $splitname[0];
-        return($shortname)          if not defined($type);
-        return($folder, $fullname)     if defined($type) and $type =~ /folderfull/;
-        return($folder, $shortname)    if defined($type) and $type =~ /folder/;
-        return($fullname)        if defined($type) and $type =~ /full/;
-        return($folder, $fullname, $shortname)  if defined($type) and $type =~ /all/;
-}
-

@@ -19,55 +19,66 @@ cd highsenshmm
 ```
 
 ## *2. Requirements:*
-
-1. bedtools v.2.25 (http://bedtools.readthedocs.io/en/latest/content/installation.html)
-2. stochhmm v. 0.37(https://github.com/KorfLab/StochHMM)
-
-    1. Installing bedtools 
-    To check if you have it or not, in terminal just type `bedtools --version`. If command not found or the version isn't at least v.2.25 then you have to install it.
     
-    To install bedtools copy paste below:
+    1. bedtools v.2.25 (http://bedtools.readthedocs.io/en/latest/content/installation.html)
+    
+        - To check if you have it or not, in terminal just type `bedtools --version`. 
+        - If command not found or the version isn't at least v.2.25 then you have to install it.
+        - To install bedtools copy paste below:
+    
+        ```
+        # go to bedtools folder
+        cd bin/bedtools2_25_0/
+    
+        # make is linux way of installing
+        make
+    
+        # go to main folder
+        cd ../../
+        ```
+    
+    2. stochhmm v. 0.37(https://github.com/KorfLab/StochHMM)
+        - To check if you have it or not, in terminal just type `stochhmm`. 
+        - If command not found or the version isn't at least v.0.37 then you have to install it.
+        - To install stochhmm copy paste below in the terminal
+    
+        ```
+        # go to bedtools folder
+        cd bin/StochHMM/
+        
+        # configure is to configure the make according to your computer setup
+        ./configure
+        make
+        
+        # go to main folder
+        cd ../../
+        ```
 
-    ```
-    # go to bedtools folder
-    cd bin/bedtools2_25_0/
-
-    # make is linux way of installing
-    make
-
-    # go to main folder
-    cd ../../
-    ```
-
-### 2. Installing stochhmm
-To check if you have it or not, in terminal just type `stochhmm`. If command not found or the version isn't at least v.0.37 then you have to install it.
-
-To install stochhmm copy paste below in the terminal
-
-```
-# go to bedtools folder
-cd bin/StochHMM/
-
-# configure is to configure the make according to your computer setup
-./configure
-make
-
-# go to main folder
-cd ../../
-```
-
----
 
 ## *3. Running:*
 
 Say we are running this on ZNF420 region (chr19:37518112-37671921) for 4 DRIPc + strand files:
 
-- Control:  ExampleZNF420_control_pos.wig
-- Scramble: ExampleZNF420_scramble_pos.wig 
-- Top1A: ExampleZNF420_top1A_pos.wig
-- Top1B: ExampleZNF420_top1B_pos.wig
+- Control:  `ExampleZNF420_control_pos.wig`
+- Scramble: `ExampleZNF420_scramble_pos.wig`
+- Top1A:    `ExampleZNF420_top1A_pos.wig`
+- Top1B:    `ExampleZNF420_top1B_pos.wig`
 
-Then for each file, run Pipeline.pl
+Create a text file using whatever text editor you want (recommended: nano, vim, for mac: textedit, textwrangler) and put all 4 file names, one file per row. Example is `FILES.txt`
 
-Then run this *after the above commands have beenprocessed*
-./3_Combine.sh
+> ExampleZNF420_control_pos.wig
+> ExampleZNF420_scramble_pos.wig
+> ExampleZNF420_top1A_pos.wig
+> ExampleZNF420_top1B_pos.wig
+
+Then run Pipeline.pl on the tet file, for example:
+
+`./Pipeline.pl FILES.txt`
+
+This will produce 1 peak file per sample and a combined peak file `output.peak`. For example, the above will produce:
+
+> 1. ExampleZNF420_control_pos.peak
+> 2. ExampleZNF420_scramble_pos.peak
+> 3. ExampleZNF420_top1A_pos.peak
+> 4. ExampleZNF420_top1B_pos.peak
+> 5. output.PEAK
