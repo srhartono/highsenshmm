@@ -38,6 +38,7 @@ cd highsenshmm
         ```
     
     2. stochhmm v. 0.37(https://github.com/KorfLab/StochHMM)
+
         - To check if you have it or not, in terminal just type `stochhmm`. 
         - If command not found or the version isn't at least v.0.37 then you have to install it.
         - To install stochhmm copy paste below in the terminal
@@ -45,7 +46,7 @@ cd highsenshmm
         ```
         # go to bin folder
         cd bin
-
+        
         # git clone StochHMM
         git clone https://github.com/KorfLab/StochHMM
         
