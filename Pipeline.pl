@@ -2,13 +2,18 @@
 
 use strict; use warnings;
 
-my ($bedtools_version) = `bedtools --version` =~ /bedtools v(\d+\.\d+)\.?\d*$/;
+my ($bedtools_version) = `bedtools --version` =~ /bedtools v(\d+\.?\d*)\.?\d*/;
+
+print "\n";
+print "- bedtools version > 2.17 found!\e[0;32m " . `which bedtools` . "\e[0m" if `which bedtools` =~ /bedtools/ and defined($bedtools_version) and $bedtools_version >= 2.17;
+print "- stochhmm found!\e[0m\e[0;32m " . `which stochhmm` . "\e[0m" if `which stochhm` !~ /stochhmm/;
+
 system("export PATH=\$PATH:./bin/bedtools2_25_0/bin/") and print "- Using bin/bedtools2_25_0/bin/ as bedtools\n" if `which bedtools` !~ /bedtools/ or not defined($bedtools_version) or $bedtools_version < 2.17;
 system("export PATH=\$PATH:./bin/StochHMM/") and print "- Using bin/StochHMM/ as stochhmm\n" if `which stochhm` !~ /stochhmm/;
 print "\n";
 
 my ($FILE_LOCATION) = @ARGV;
-die "Usage: $0 FILES.txt\n\n" unless @ARGV;
+die "Usage: $0 file.txt\n\n" unless @ARGV;
 
 my @FILES = `awk '\$1 ~ /\\w+/ {print}' $FILE_LOCATION`;
 my @FILENAMES;
