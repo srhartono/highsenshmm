@@ -69,7 +69,7 @@ __2.__ stochhmm v. 0.35 (https://github.com/KorfLab/StochHMM)
 
     #Copy paste stochhmm according to your operating system (mac/ubuntu)
     cp bin/stochhmm_mac_10.9.5 bin/StochHMM/stochhmm
-    cp bin/stochhmm_ubuntu_14.04.4 bin/StochHMM/
+    cp bin/stochhmm_ubuntu_14.04.4 bin/StochHMM/stochhmm
     ```
 
 ## *3. Test run:*
