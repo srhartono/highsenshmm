@@ -9,7 +9,7 @@
 
 ```
 # Go to home folder
-cd ~
+cd
 
 # Copy the highsenshmm software
 git clone https://github.com/srhartono/highsenshmm
