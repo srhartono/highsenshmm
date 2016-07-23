@@ -20,43 +20,43 @@ cd highsenshmm
 
 ## *2. Requirements:*
     
-    1. bedtools v.2.25 (http://bedtools.readthedocs.io/en/latest/content/installation.html)
-    
-        - To check if you have it or not, in terminal just type `bedtools --version`. 
-        - If command not found or the version isn't at least v.2.25 then you have to install it.
-        - To install bedtools copy paste below:
-    
-        ```
-        # go to bedtools folder
-        cd bin/bedtools2_25_0/
-    
-        # make is linux way of installing
-        make
-    
-        # go to main folder
-        cd ../../
-        ```
-    
-    2. stochhmm v. 0.37(https://github.com/KorfLab/StochHMM)
+__1.__ bedtools v.2.25 (http://bedtools.readthedocs.io/en/latest/content/installation.html)
 
-        - To check if you have it or not, in terminal just type `stochhmm`. 
-        - If command not found or the version isn't at least v.0.37 then you have to install it.
-        - To install stochhmm copy paste below in the terminal
+    - To check if you have it or not, in terminal just type `bedtools --version`. 
+    - If command not found or the version isn't at least v.2.25 then you have to install it.
+    - To install bedtools copy paste below:
     
-        ```
-        # go to bin folder
-        cd bin
-        
-        # git clone StochHMM
-        git clone https://github.com/KorfLab/StochHMM
-        
-        # configure is to configure the make according to your computer setup
-        ./configure
-        make
-        
-        # go to main folder
-        cd ../../
-        ```
+    ```
+    # go to bedtools folder
+    cd bin/bedtools2_25_0/
+    
+    # make is linux way of installing
+    make
+    
+    # go to main folder
+    cd ../../
+    ```
+    
+__2.__ stochhmm v. 0.37(https://github.com/KorfLab/StochHMM)
+
+    - To check if you have it or not, in terminal just type `stochhmm`. 
+    - If command not found or the version isn't at least v.0.37 then you have to install it.
+    - To install stochhmm copy paste below in the terminal
+    
+    ```
+    # go to bin folder
+    cd bin
+    
+    # git clone StochHMM
+    git clone https://github.com/KorfLab/StochHMM
+    
+    # configure is to configure the make according to your computer setup
+    ./configure
+    make
+    
+    # go to main folder
+    cd ../../
+    ```
 
 
 ## *3. Running:*
