@@ -43,8 +43,11 @@ cd highsenshmm
         - To install stochhmm copy paste below in the terminal
     
         ```
-        # go to bedtools folder
-        cd bin/StochHMM/
+        # go to bin folder
+        cd bin
+
+        # git clone StochHMM
+        git clone https://github.com/KorfLab/StochHMM
         
         # configure is to configure the make according to your computer setup
         ./configure
