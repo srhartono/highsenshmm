@@ -42,7 +42,7 @@ for (my $i = 0; $i < @FILES; $i++) {
 	my $cmd5 = "./bin/3_Combine.pl tmp/$filename.4"; 
 	system($cmd5) == 0 or die "Failed to run bin/3_Combine.pl: $!\n";
 	print "\e[1;35m- Step 5/5 \e[0;32mSUCCESS!\e[0m: $cmd5\n";
-	my ($linecount) = `wc -l $filename.peak` =~ /^(\d+)/;
+	my ($linecount) = `wc -l $filename.peak` =~ /^[ ]*(\d+)/;
 	print "\e[0;33m$FILEorig done! Output = $filename.peak\e[0m (\e[0;32m$linecount\e[0m peaks)\n";
 	print "\n";
 }

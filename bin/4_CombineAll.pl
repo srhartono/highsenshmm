@@ -55,9 +55,9 @@ sub process_line {
 }
 
 system("cat tmp/$filename.*.TEMP |sort -k1,1 -k2,2n > $filename.peak && /bin/rm tmp/$filename.* $FILE");
-my ($linecount) = `wc -l $filename.peak` =~ /^(\d+)/;
+my ($linecount) = `wc -l $filename.peak` =~ /^[ ]*(\d+)/;
 print "\e[1;35mFinal Combine Step \e[0;32mSUCCESS!\e[0m: $0 @FILES)\n";
-print "\n\e[1;31mOutput = $filename.peak\e[0m (\e[0;32m$linecount\e[0m peaks)\n\n";
+print "\n\e[1;31mOutput = $filename.PEAK\e[0m (\e[0;32m$linecount\e[0m peaks)\n\n";
 
 sub getFilename {
    my ($fh, $type) = @_;
