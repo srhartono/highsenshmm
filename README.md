@@ -61,6 +61,17 @@ __2.__ stochhmm v. 0.35 (https://github.com/KorfLab/StochHMM)
     cd ../../
     ```
 
+- If stochhmm failed to install, I put some binaries inside `bin` folder for ubuntu or mac which could work
+
+    ```
+    #Create stochhmm directory in bin
+    mkdir bin/StochHMM/
+
+    #Copy paste stochhmm according to your operating system (mac/ubuntu)
+    cp bin/stochhmm_mac_10.9.5 bin/StochHMM/stochhmm
+    cp bin/stochhmm_ubuntu_14.04.4 bin/StochHMM/
+    ```
+
 ## *3. Test run:*
 
 To quickly test if everything works do:
