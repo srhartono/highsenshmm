@@ -106,7 +106,7 @@ Then run Pipeline.pl on the text file, for example:
 
 If there is a green SUCCESS then it's successful, otherwise send me the FILES.log file
 
-This will produce 1 peak file per sample and a combined peak file `output.peak`. For example, the above will produce:
+This will produce 1 peak file per sample and a combined peak file `output.PEAK`. For example, the above will produce:
 
 ```
 1. ExampleZNF420_control_pos.peak
