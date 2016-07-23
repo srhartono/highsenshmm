@@ -48,6 +48,8 @@ sub process_line {
 }
 
 system("cat tmp/$filename.*.TEMP > $filename.peak");
+my ($linecount) = `wc -l $filename.peak` =~ /^[ ]*(\d+)/;
+print STDERR "\e[1;31mOutput: $filename.peak\e[0m (\e[0;32m$linecount\e[0m peaks)\n";
 
 sub getFilename {
    my ($fh, $type) = @_;
