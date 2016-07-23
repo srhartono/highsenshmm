@@ -8,7 +8,7 @@ system("export PATH=\$PATH:./bin/StochHMM/") and print "- Using bin/StochHMM/ as
 print "\n";
 
 my ($FILE_LOCATION) = @ARGV;
-die "Usage: $0 file.txt\n\n" unless @ARGV;
+die "Usage: $0 FILES.txt\n\n" unless @ARGV;
 
 my @FILES = `awk '\$1 ~ /\\w+/ {print}' $FILE_LOCATION`;
 my @FILENAMES;

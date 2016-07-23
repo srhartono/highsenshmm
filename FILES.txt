@@ -1,5 +1,5 @@
-ExampleZNF420_control_pos.wig
-ExampleZNF420_scramble_pos.wig
-ExampleZNF420_top1A_pos.wig
-ExampleZNF420_top1B_pos.wig
+example/ExampleZNF420_control_pos.wig
+example/ExampleZNF420_scramble_pos.wig
+example/ExampleZNF420_top1A_pos.wig
+example/ExampleZNF420_top1B_pos.wig
 

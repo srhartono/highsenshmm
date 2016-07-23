@@ -57,7 +57,7 @@ cd highsenshmm
 
 ## *3. Running:*
 
-Say we are running this on ZNF420 region (chr19:37518112-37671921) for 4 DRIPc + strand files:
+Say we are running this on ZNF420 region (chr19:37518112-37671921) for 4 DRIPc + strand files (provided in this directory)
 
 - Control:  `ExampleZNF420_control_pos.wig`
 - Scramble: `ExampleZNF420_scramble_pos.wig`
